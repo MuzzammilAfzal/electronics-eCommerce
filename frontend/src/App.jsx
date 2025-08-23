@@ -6,6 +6,7 @@ import MyCart from './pages/myCart';
 import Buy from './pages/buy';
 import MyOrders from './pages/myOrders';
 import AdminLogin from './pages/adminPages/adminLogin';
+import AdminDashboard from './pages/adminPages/adminDashboard';
 
 
 
@@ -24,7 +25,8 @@ function App() {
           <Route path="/myOrders" element={<MyOrders></MyOrders>}></Route>
         
         
-          <Route path='/adminLogin' element={<AdminLogin></AdminLogin>}></Route>
+          <Route path='/admin' element={<AdminLogin></AdminLogin>}></Route>
+          <Route path='/adminDashboard' element={<AdminDashboard></AdminDashboard>}></Route>
         </Routes>
      </Router>
     </>
