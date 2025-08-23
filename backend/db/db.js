@@ -19,11 +19,17 @@ const productSchema= new mongoose.Schema({
    imageLink:String,
 })
 
+const adminSchema = new mongoose.Schema({
+  username:String,
+  password:String
+})
+
 const user = mongoose.model("user",userSchema)
 const product =mongoose.model("product",productSchema)
-
+const admin= mongoose.model("admin",adminSchema,"admin")
 
 module.exports={
   user,
-  product
+  product,
+  admin
 }

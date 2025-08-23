@@ -3,7 +3,7 @@ const router=express.Router()
 
 
 router.get('/',(req,res)=>{
-    res.json("message: hello world xxnn")
+    res.status(200).json({message: "hello world "})
 })
 
 module.exports=router

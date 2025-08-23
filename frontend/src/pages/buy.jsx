@@ -1,9 +1,11 @@
+import NavBar from "../components/navBar";
 
 
 export default function Buy(){
 
 
     return<>
-    <h1>llll</h1>
+     <NavBar/>
+     <h1>llll</h1>
     </>
 }
