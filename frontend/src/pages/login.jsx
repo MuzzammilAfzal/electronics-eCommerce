@@ -2,33 +2,32 @@ import { useState } from "react";
 import {  useNavigate } from "react-router-dom";
 const url=import.meta.env.VITE_URL
 
+export default function Login(){
 
-export default function AdminLogin(){
-  
-   const navigate=useNavigate()
-    const [admin, setAdmin] = useState({ username: "", password: "" });
+    const navigate=useNavigate()
+    const [user, setUser] = useState({ email: "", password: "" });
 
-  const handleusernameChange = (e) => {
-  setAdmin({ ...admin, username: e.target.value });
+  const handleEmailChange = (e) => {
+  setUser({ ...user, email: e.target.value });
   };
 
   const handlePasswordChange = (e) => {
-  setAdmin({ ...admin, password: e.target.value });
+  setUser({ ...user, password: e.target.value });
    };
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-     const response = await fetch(`${url}/admin`, {
+     const response = await fetch(`${url}/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(admin),
+    body: JSON.stringify(user),
     });
     const data = await response.json();
     if(data.token){
-        sessionStorage.setItem("token",data.token)
-        navigate('/adminDashboard',{replace:true})
+        localStorage.setItem("token",data.token)
+        navigate('/',{replace:true})
     }else{
-        alert("error logging admin")
+        alert("error logging user")
     }
   };
 
@@ -36,10 +35,10 @@ export default function AdminLogin(){
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", background: "white" }}>
       <form method="POST"
         onSubmit={handleSubmit} style={{ padding: "20px", background: "white", }}>
-        <h2 style={{ textAlign: "center" }}>Admin Login</h2>
+        <h2 style={{ textAlign: "center" }}>User Login</h2>
         <div style={{ marginBottom: "10px" }}>
-          <label>UserName</label><br />
-          <input type="text" name="username" onChange={handleusernameChange} 
+          <label>Email</label><br />
+          <input type="text" name="username" onChange={handleEmailChange} 
             style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
         </div>
         <div style={{ marginBottom: "10px" }}>
@@ -53,7 +52,4 @@ export default function AdminLogin(){
       </form>
     </div>
   )
-
-
-    
 }

@@ -4,10 +4,11 @@ const mongoose=require("mongoose")
 
 const userSchema= new mongoose.Schema({
     phoneNo : {type:String ,required:true,min:10,max:10},
-    username:{type:String,required:true},
+    fullName:{type:String,required:true},
     email:String,
     password:{type:String,required:true},
-    myCart:[{type:mongoose.Schema.Types.ObjectId, ref:"user"}],
+    deliveryAddress:{type:String,required:true},
+    myCart:[{type:mongoose.Schema.Types.ObjectId, ref:"product"}],
     myOrders:[{ type:mongoose.Schema.Types.ObjectId, ref:"product"}]
 })
 

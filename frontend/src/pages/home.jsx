@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import NavBar from "../components/navBar"
 import Product from "../components/product"
-import { data } from "react-router-dom"
 const url=import.meta.env.VITE_URL
 
 
@@ -19,7 +18,6 @@ function Home(){
         
     },[])
 
-
        
 
     return <>
@@ -29,7 +27,7 @@ function Home(){
            <h2 style={{width:"100%"}}>All Products</h2>
            {
             product.map(e=>{
-              return <Product productName={e.productName} description={e.description} price={e.price} imageLink={e.imageLink}></Product>
+              return <Product productName={e.productName} description={e.description} price={e.price} imageLink={e.imageLink} id={e._id}></Product>
             })
            }
 
