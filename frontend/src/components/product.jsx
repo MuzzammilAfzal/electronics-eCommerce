@@ -1,9 +1,9 @@
- import { Link } from "react-router-dom"
+ import { Link, useNavigate } from "react-router-dom"
  const url=import.meta.env.VITE_URL
 
  function Product({productName,description,price,imageLink,id}){
 
-
+   const navigate=useNavigate()
     
 
     return  <div style={{border:"solid black 2px",height:320,width:200,margin:10}}>
@@ -16,6 +16,7 @@
                  <b>₹{price}</b><br />
                  <button style={{marginRight:10}} ><Link to={`/buy?${id}`} >Buy Now</Link></button>
                 <button onClick={async()=>{
+                    if(localStorage.getItem("token")){
                     const response= await fetch(`${url}/addToCart`,{
                         method:"POST",
                         headers:{
@@ -28,6 +29,9 @@
                     }else{
                         alert(data.message)
                     }
+                }else{
+                    navigate('/myCart')
+                }
                 }}> Add to Cart</button>
                
               </div> 

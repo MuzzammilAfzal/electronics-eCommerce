@@ -22,7 +22,7 @@ function Home(){
 
     return <>
     <NavBar/>
-    <div style={{padding:20,display:"flex",flexWrap:"wrap"}}>
+    <div style={{padding:20,display:"flex",flexWrap:"wrap",width:"100%"}}>
        
            <h2 style={{width:"100%"}}>All Products</h2>
            {

@@ -36,14 +36,17 @@ export default function MyCart(){
         </div>    
     </>
     }else{
-        return(
-            <div style={{display:"flex",justifyContent:"center",alignItems:"center",height: "100vh",padding:10}}>
+        return<>
+        <NavBar/>
+            <div style={{display:"flex",justifyContent:"center",alignItems:"center",height: 100,padding:10}}>
+                
                 <h4>SignUp to see your Cart Details</h4>
                  <button type="submit" style={{  padding: "10px", background: "blue", color: "white",marginLeft:10 }} onClick={()=>{
                     navigate("/signup",{replace:true})
                  }}>
                    SignUp</button>
             </div>
-        )
+            </>
+        
     }
 }

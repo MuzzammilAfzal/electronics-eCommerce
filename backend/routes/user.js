@@ -65,4 +65,32 @@ router.get('/myCart',authJwt,async (req,res)=>{
     res.status(200).send(myCart)
 })
 
+router.get('/myOrders',authJwt,async (req,res)=>{
+    const {email}=req.user
+    const User= await user.findOne({email}).populate("myOrders")
+    const myOrders=User.myOrders
+    res.status(200).send(myOrders)
+})
+
+router.get('/buyPageProduct',authJwt,async (req,res)=>{
+    const id=req.headers.id
+    const Product= await product.findById(id)
+    res.status(200).send(Product)
+})
+
+
+router.post('/confirmOrder',authJwt, async(req,res)=>{
+    const id=  req.headers.id    
+    const {email}=req.user
+    const User= await user.findOne({email})
+    if(User){
+        User.myOrders.push(id)
+        User.save()
+        res.status(200).json({message:"successful "})
+    }else{
+       res.status(400).json({message:"unsuccessful Order"}) 
+    }
+    
+})
+
 module.exports=router
