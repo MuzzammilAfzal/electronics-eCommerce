@@ -25,7 +25,7 @@ export default function AdminLogin(){
     });
     const data = await response.json();
     if(data.token){
-        localStorage.setItem("token",data.token)
+        sessionStorage.setItem("token",data.token)
         navigate('/adminDashboard',{replace:true})
     }else{
         alert("error logging admin")

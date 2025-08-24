@@ -33,7 +33,7 @@ export default function AdminDashboard(){
      e.preventDefault()
      const response = await fetch(`${url}/admin/addProduct`, {
     method: "POST",
-    headers: { "token": localStorage.getItem("token"),
+    headers: { "token": sessionStorage.getItem("token"),
         "Content-Type": "application/json" },
     body: JSON.stringify(product),
     });
@@ -83,7 +83,7 @@ export default function AdminDashboard(){
       </form>
       <div >
         <button style={{ width: "100%", padding: "10px", background: "blue", color: "white" }} onClick={()=>{
-          localStorage.removeItem("token")
+          sessionStorage.removeItem("token")
           navigate("/admin",{replace:true})
         }}>Logout</button>
       </div>
