@@ -17,6 +17,6 @@ app.use('/admin',adminRouter)
 
 mongoose.connect(process.env.db_url, {  dbName: "electronicsStore" })
 
-app.listen(3000,()=>{
+app.listen(80,()=>{
     console.log("app running on port 3000")
 })
