@@ -15,8 +15,8 @@ app.use(cors())
 app.use('/',userRouter)
 app.use('/admin',adminRouter)
 
-mongoose.connect(process.env.db_url, {  dbName: "electronicsStore" })
+mongoose.connect(process.env.MONGO_URI, {  dbName: "electronicsStore" })
 
-app.listen(80,()=>{
+app.listen(4000,()=>{
     console.log("app running on port 3000")
 })
