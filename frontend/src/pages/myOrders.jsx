@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const url=import.meta.env.VITE_URL
 import Product from "../components/product"
 import { replace, useNavigate } from "react-router-dom";
+import RenderLoading from "../components/renderLoading";
 
 
 
@@ -13,14 +14,17 @@ export default function MyOrders(){
    if(localStorage.getItem("token")){
 
     const [myOrders,setMyOrders]=useState([])
+    const [loading,setLoading]=useState(true)
+
 
     useEffect(()=>{
+      setLoading(true)
       fetch(`${url}/myOrders`,{
             method:"GET",
             headers:{
                 token:localStorage.getItem("token")
             }
-        }).then((response)=> response.json()).then(data=>{setMyOrders(data);console.log(data)})
+        }).then((response)=> response.json()).then(data=>{setMyOrders(data);setLoading(false);console.log(data)})
         
         
     },[])
@@ -29,6 +33,7 @@ export default function MyOrders(){
      <NavBar/>
        <div style={{padding:20,display:"flex",flexWrap:"wrap"}}>
             <h2 style={{width:"100%"}}>My Orders</h2>
+            <RenderLoading loading={loading}/>
             {
             myOrders.map(e=>{
               return <Product productName={e.productName} description={e.description} price={e.price} imageLink={e.imageLink} id={e._id}></Product>

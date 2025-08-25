@@ -3,6 +3,7 @@ import NavBar from "../components/navBar";
 const url=import.meta.env.VITE_URL
 import Product from "../components/product"
 import { replace, useNavigate } from "react-router-dom";
+import RenderLoading from "../components/renderLoading";
 
 
 
@@ -12,14 +13,17 @@ export default function MyCart(){
    if(localStorage.getItem("token")){
 
     const [myCart,setMyCart]=useState([])
+    const [loading,setLoading]=useState(true)
+
 
     useEffect(()=>{
+      setLoading(true)
       fetch(`${url}/myCart`,{
             method:"GET",
             headers:{
                 token:localStorage.getItem("token")
             }
-        }).then((response)=> response.json()).then(data=>{setMyCart(data);console.log(data)})
+        }).then((response)=> response.json()).then(data=>{setMyCart(data);setLoading(false);console.log(data)})
         
         
     },[])
@@ -28,6 +32,7 @@ export default function MyCart(){
      <NavBar/>
        <div style={{padding:20,display:"flex",flexWrap:"wrap"}}>
             <h2 style={{width:"100%"}}>My Cart</h2>
+            <RenderLoading loading={loading}/>
             {
             myCart.map(e=>{
               return <Product productName={e.productName} description={e.description} price={e.price} imageLink={e.imageLink} id={e._id}></Product>
