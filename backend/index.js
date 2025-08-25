@@ -9,7 +9,7 @@ const cors=require('cors')
 dotenv.config()
 const app =express()
 app.use(express.json())
-app.use(cors())
+app.use(cors({origin:"http://ec2-51-20-83-24.eu-north-1.compute.amazonaws.com:5000"}))
 
 
 app.use('/',userRouter)
