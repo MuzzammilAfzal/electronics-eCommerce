@@ -56,12 +56,12 @@ export default function SignUp(){
         </div>
         <div style={{ marginBottom: "10px" }}>
           <label>Phone Number (without +91)</label><br />
-          <input type="number" name="username" onChange={handlePhoneNoChange} 
+          <input type="number" maxLength={10} name="phoneNO" onChange={handlePhoneNoChange} 
             style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
         </div>
         <div style={{ marginBottom: "10px" }}>
           <label>Email</label><br />
-          <input type="email" name="username" onChange={handleEmailChange} 
+          <input type="email" name="email" onChange={handleEmailChange} 
             style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
         </div>
         <div style={{ marginBottom: "10px" }}>
@@ -71,7 +71,7 @@ export default function SignUp(){
         </div>
         <div style={{ marginBottom: "10px" }}>
           <label>Delivery Address</label><br />
-          <input type="text" name="password" onChange={handleDeliveryAddressChange} 
+          <input type="text" name="deliveryAddress" onChange={handleDeliveryAddressChange} 
             style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
         </div>
         <button type="submit" style={{ width: "100%", padding: "10px", background: "blue", color: "white" }}>
