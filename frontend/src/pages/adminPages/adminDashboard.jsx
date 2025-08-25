@@ -53,9 +53,9 @@ export default function AdminDashboard(){
   };
 
     return(
-       <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", height: "100vh", background: "white" }}>
+       <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", height: "100vh", background: "white",flexWrap:"wrap" }}>
       <form method="POST"
-        onSubmit={handleSubmit} style={{ padding: "20px", background: "white", }}>
+        onSubmit={handleSubmit} style={{ padding: "20px", background: "white",marginRight:10 }}>
         <h2 style={{ textAlign: "center" }}>Add Products</h2>
         <div style={{ marginBottom: "10px" }}>
           <label>Product Name</label><br />
