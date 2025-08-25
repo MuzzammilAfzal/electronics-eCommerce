@@ -9,7 +9,7 @@ const cors=require('cors')
 dotenv.config()
 const app =express()
 app.use(express.json())
-app.use(cors({origin:"*"}))
+app.use(cors({origin:"https://electronics-e-commerce-pink.vercel.app",methods:["GET","POST","PUT","DELETE"],credentials:true}))
 
 
 app.use('/',userRouter)
