@@ -53,35 +53,35 @@ export default function AdminDashboard(){
   };
 
     return(
-       <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", height: "100vh", background: "white",flexWrap:"wrap" }}>
+       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", background: "white",flexWrap:"wrap" }}>
       <form method="POST"
         onSubmit={handleSubmit} style={{ padding: "20px", background: "white",marginRight:10 }}>
         <h2 style={{ textAlign: "center" }}>Add Products</h2>
         <div style={{ marginBottom: "10px" }}>
           <label>Product Name</label><br />
-          <input type="text" name="username" onChange={handleProductNameChange} 
+          <input type="text"  onChange={handleProductNameChange} 
             style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
         </div>
         <div style={{ marginBottom: "10px" }}>
           <label>Description</label><br />
-          <input type="text" name="password" onChange={handleDescriptionChange} 
+          <input type="text"  onChange={handleDescriptionChange} 
             style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
         </div>
          <div style={{ marginBottom: "10px" }}>
           <label>Price</label><br />
-          <input type="text" name="password" onChange={handlePriceChange} 
+          <input type="text" onChange={handlePriceChange} 
             style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
         </div>
          <div style={{ marginBottom: "10px" }}>
           <label>Image Url</label><br />
-          <input type="text" name="password" onChange={handleImageLinkChange} 
+          <input type="text" onChange={handleImageLinkChange} 
             style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
         </div>
         <button type="submit" style={{ width: "100%", padding: "10px", background: "blue", color: "white" }}>
           Add Product
         </button>
       </form>
-      <div >
+      <div style={{display:"flex",alignItems:"start"}} >
         <button style={{ width: "100%", padding: "10px", background: "blue", color: "white" }} onClick={()=>{
           sessionStorage.removeItem("token")
           navigate("/admin",{replace:true})
