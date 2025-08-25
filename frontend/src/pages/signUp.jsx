@@ -45,7 +45,7 @@ export default function SignUp(){
   };
 
      return (
-    <div style={{ display: "flex",flexWrap:"wrap",gap:100, justifyContent:'center', alignItems: "center", height: "100vh", background: "white" }}>
+    <div style={{ display: "flex",flexWrap:"wrap",gap:100, justifyContent:'center', alignItems: "center", height: "50vh", background: "white" }}>
       <form method="POST"
         onSubmit={handleSubmit} style={{ padding: "20px", background: "white", }}>
         <h2 style={{ textAlign: "center" }}>User SignUp</h2>
