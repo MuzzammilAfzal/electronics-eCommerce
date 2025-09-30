@@ -1,5 +1,4 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import NavBar from "../components/navBar";
 import { useEffect } from "react";
 import { useState } from "react";
 const url=import.meta.env.VITE_URL
@@ -28,7 +27,6 @@ export default function Buy(){
     },[])
 
     return<>
-     <NavBar/>
      <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
        <div style={{border:"solid black 2px",height:550,width:400,margin:10}}>
                <div>

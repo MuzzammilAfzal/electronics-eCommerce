@@ -10,14 +10,36 @@ router.get('/',(req,res)=>{
 })
 
 
-router.get('/allProducts',async (req,res)=>{
-    const allProducts = await product.find({})
-    res.status(200).send(allProducts)
+router.post('/allProducts',async (req,res)=>{
+
+    const logic=req.body.logic 
+    const limit=req.body.limit 
+    const skip=req.body.skip
+    console.log(skip);
+    
+    const allProducts = await product.find(logic).skip(skip).limit(limit) 
+    const filteredProduct=allProducts.filter(obj=>obj.productName!==undefined)
+
+    res.status(200).send(filteredProduct)
+
+    
+})
+
+router.post('/specificProducts',async (req,res)=>{
+
+    const _id=req.body._id
+    console.log({_id});
+    
+    const specificProduct = await product.find({_id})
+
+    res.status(200).send(specificProduct)
+
+    
 })
 
 router.post('/signUp',async(req,res)=>{
  const {fullName,phoneNo,email,password,deliveryAddress,myCart,myOrders} = req.body
- const User= await user.findOne({phoneNo})
+ const User= await user.findOne({phoneNo,email})
  if (User){
     res.status(400).json({message:"User already exists"})
  }

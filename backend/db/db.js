@@ -14,10 +14,14 @@ const userSchema= new mongoose.Schema({
 
 
 const productSchema= new mongoose.Schema({
+   image:String,
    productName:String,
-   description:String,
-   price:Number,
-   imageLink:String,
+   price:String,
+   keyFeatures:String,
+   descriptionImage:String,
+   brand:String,
+   categories:String,
+   section:String,
 })
 
 const adminSchema = new mongoose.Schema({

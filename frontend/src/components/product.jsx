@@ -1,42 +1,28 @@
  import { Link, useNavigate } from "react-router-dom"
  const url=import.meta.env.VITE_URL
 
- function Product({productName,description,price,imageLink,id}){
+ function Product({_id,productName,price,image}){
+
 
    const navigate=useNavigate()
+
+ 
     
 
-    return  <div style={{border:"solid black 2px",height:320,width:200,margin:10}}>
-               <div>
-                   <img src={imageLink} style={{width:200}}></img>
-               </div>
-              <div style={{padding:10}}>
-                 <h4 style={{margin:0}}>{productName}</h4>
-                 <p style={{margin:0}}>{description}</p>
-                 <b>₹{price}</b><br />
-                 <button style={{marginRight:10}} ><Link to={`/buy?${id}`} >Buy Now</Link></button>
-                <button onClick={async()=>{
-                    if(localStorage.getItem("token")){
-                    const response= await fetch(`${url}/addToCart`,{
-                        method:"POST",
-                        headers:{
-                            token:localStorage.getItem("token"),
-                            product:id
-                        }})
-                    const data=await response.json()
-                    if(response.ok){
-                        alert("successfully added to cart")
-                    }else{
-                        alert(data.message)
-                    }
-                }else{
-                    navigate('/myCart')
-                }
-                }}> Add to Cart</button>
-               
-              </div> 
-          </div>
-    
+    return  <div className="h-fit w-full p-2 m-1 border border-white rounded-lg hover:shadow-black hover:shadow-2xl">
+      <div>
+        <img
+          src={image}
+          className="w-full rounded-lg object-cover"
+        />
+      </div>
+      <div>
+        <h4 className="m-0 font-normal h-18 md:h-12 overflow-y-scroll md:overflow-y-hidden">{productName}</h4>
+        <b>{price}</b>
+      </div>
+    </div>
+    {/* <button className="mr-5 p-1 bg-orange-300 hover:bg-orange-400 rounded-sm" ><Link to={`/buy?${id}`} >Buy Now</Link></button>
+                <button onClick={handleAddToCart} className="bg-amber-300 hover:bg-amber-400 p-1 rounded-sm"> Add to Cart</button> */}
  }
 
  export default Product

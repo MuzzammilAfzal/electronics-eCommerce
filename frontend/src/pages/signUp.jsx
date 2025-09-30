@@ -45,42 +45,42 @@ export default function SignUp(){
   };
 
      return (
-    <div style={{ display: "flex",flexWrap:"wrap",gap:100, justifyContent:'center', alignItems: "center", height: "50vh", background: "white" }}>
+    <div className="flex flex-wrap gap-20 justify-center items-center h-1/2 bg-white">
       <form method="POST"
-        onSubmit={handleSubmit} style={{ padding: "20px", background: "white", }}>
-        <h2 style={{ textAlign: "center" }}>User SignUp</h2>
-        <div style={{ marginBottom: "10px" }}>
+        onSubmit={handleSubmit} className="p-6 border-1 bg-white" >
+        <h2 className="text-center" >User SignUp</h2>
+        <div className="mb-2.5">
           <label>Full Name</label><br />
           <input type="text" name="username" onChange={handleFullNameChange} 
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
+           className="w-full p-2 mt-1 border-1" required />
         </div>
-        <div style={{ marginBottom: "10px" }}>
+        <div className="mb-2.5">
           <label>Phone Number (without +91)</label><br />
           <input type="number" maxLength={10} name="phoneNO" onChange={handlePhoneNoChange} 
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
+           className="w-full p-2 mt-1" required />
         </div>
-        <div style={{ marginBottom: "10px" }}>
+        <div className="mb-2.5" >
           <label>Email</label><br />
           <input type="email" name="email" onChange={handleEmailChange} 
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
+           className="w-full p-2 mt-1" required />
         </div>
-        <div style={{ marginBottom: "10px" }}>
+        <div className="mb-2.5">
           <label>Password</label><br />
           <input type="password" name="password" onChange={handlePasswordChange} 
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
+           className="w-full p-2 mt-1" required />
         </div>
-        <div style={{ marginBottom: "10px" }}>
+        <div className="mb-2.5">
           <label>Delivery Address</label><br />
           <input type="text" name="deliveryAddress" onChange={handleDeliveryAddressChange} 
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
+           className="w-full p-2 mt-1.5" required />
         </div>
-        <button type="submit" style={{ width: "100%", padding: "10px", background: "blue", color: "white" }}>
+        <button type="submit" className="w-full p-2.5 bg-blue-500 text-white" >
           SignUp
         </button>
       </form>
       <div>
         <label>Already have account</label>
-        <button type="submit" style={{ width: "100%", padding: "10px", background: "blue", color: "white" }} onClick={()=>{
+        <button type="submit" className="w-full p-2.5 bg-blue-500 text-white" onClick={()=>{
             navigate('/login',{replace:true})
         }}>Login</button>
       </div>

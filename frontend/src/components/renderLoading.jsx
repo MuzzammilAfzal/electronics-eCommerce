@@ -5,7 +5,7 @@ export default function RenderLoading({loading}){
 
 
     if(loading===true){
-        return <><h2 style={{height:100,width:100}}>Loading...</h2></>
+        return <><h2 style={{height:100,width:"auto"}}>Loading...Free Servers takes time 😂</h2></>
     }
 
 }

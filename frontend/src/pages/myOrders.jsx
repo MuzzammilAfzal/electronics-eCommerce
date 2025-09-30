@@ -1,9 +1,9 @@
-import NavBar from "../components/navBar";
+
 import { useEffect, useState } from "react";
 const url=import.meta.env.VITE_URL
-import Product from "../components/product"
-import { replace, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import RenderLoading from "../components/renderLoading";
+import ProductOrdered from "../components/orderedProduct";
 
 
 
@@ -30,20 +30,19 @@ export default function MyOrders(){
     },[])
 
     return <>
-     <NavBar/>
+
        <div style={{padding:20,display:"flex",flexWrap:"wrap"}}>
             <h2 style={{width:"100%"}}>My Orders</h2>
             <RenderLoading loading={loading}/>
             {
             myOrders.map(e=>{
-              return <Product productName={e.productName} description={e.description} price={e.price} imageLink={e.imageLink} id={e._id}></Product>
+              return <ProductOrdered productName={e.productName} description={e.description} price={e.price} imageLink={e.imageLink} id={e._id}></ProductOrdered>
             })
            }
         </div>    
     </>
     }else{
         return<>
-        <NavBar/>
             <div style={{display:"flex",justifyContent:"center",alignItems:"center",height: 100,padding:10}}>
                 
                 <h4>SignUp to see your Order Details</h4>
