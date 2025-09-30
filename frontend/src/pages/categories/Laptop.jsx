@@ -32,6 +32,7 @@ const Laptop = () => {
 
   return (
     <div className='p-2'>
+      {window.scrollTo({ top: 0, behavior: "smooth" })}
          <Banner data={isMd? bannerImagesDesktop:bannerImagesMobile}></Banner>
         <ShopByBrand companies={companiesList} />
 
@@ -40,7 +41,7 @@ const Laptop = () => {
             <CategoriesCards title={""} link={"/"} logic={{categories:"macbook",brand:"apple"}} limit={0} skip={0} />
          </div>
 
-         <span className="font-extrabold text-2xl flex justify-center items-center w-full h-15 mt-6">Shop By Processor 🢃</span>
+         <span className="font-extrabold text-2xl flex justify-center items-center w-full h-15 mt-6">Shop By Processor ️⬇️</span>
 
           <div className="w-full h-fit  p-2 my-2 mb-15 rounded-2xl bg-[url('/images/wallpaper/wp4.jpg')] bg-cover">
             <span className="font-bold text-2xl text-white ">Intel Core i5</span>
@@ -77,7 +78,7 @@ const Laptop = () => {
            
          </div>
 
-          <span className="font-extrabold text-2xl flex justify-center items-center w-full h-15 mt-6">Shop By Mode 🢃</span>
+          <span className="font-extrabold text-2xl flex justify-center items-center w-full h-15 mt-6">Shop By Mode ️⬇️</span>
 
           <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[url('/images/wallpaper/wp7.jpg')] bg-cover ">
             <span className="font-bold text-2xl text-white ">Gaming Mode</span>

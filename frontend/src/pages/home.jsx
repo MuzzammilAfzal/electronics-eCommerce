@@ -125,7 +125,7 @@ function Home(){
            </div>
 
            
-           <span className="font-extrabold text-2xl flex justify-center items-center w-full h-15">Home Appliances 🢃</span>
+           <span className="font-extrabold text-2xl flex justify-center items-center w-full h-15">Home Appliances ️⬇️</span>
 
 
            <div className="w-full h-fit p-4 my-2 rounded-2xl bg-[#b6385a]">

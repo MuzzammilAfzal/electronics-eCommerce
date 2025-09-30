@@ -36,6 +36,7 @@ const CMobile = () => {
 
   return (
     <div className='p-2'>
+         {window.scrollTo({ top: 0, behavior: "smooth" })}
         <Banner data={isMd? bannerImagesDesktop:bannerImagesMobile}></Banner>
         <ShopByBrand companies={companiesList} />
 
@@ -44,7 +45,7 @@ const CMobile = () => {
             <CategoriesCards title={""} link={"/"} logic={{categories:"mobile",brand:"apple"}} limit={0} skip={0} />
          </div>
 
-         <span className="font-extrabold text-2xl flex justify-center items-center w-full h-15">Shop By Price 🢃</span>
+         <span className="font-extrabold text-2xl flex justify-center items-center w-full h-15">Shop By Price ️⬇️</span>
 
           <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[#85a4c9] ">
             <span className="font-bold text-2xl ">Below ₹20,000 Budget Phones</span>
