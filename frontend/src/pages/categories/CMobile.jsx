@@ -3,7 +3,7 @@ import Banner from '../../components/Banner';
 import { ShopByBrand } from '../../components/ShopByBrand';
 import CategoriesCards from '../../components/CategoriesCards';
 
-const Mobile = () => {
+const CMobile = () => {
 
      const [isMd, setIsMd] = useState(window.innerWidth >= 768);    
     
@@ -84,4 +84,4 @@ const Mobile = () => {
   )
 }
 
-export default Mobile
+export default CMobile

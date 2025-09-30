@@ -14,7 +14,7 @@ import Categories from './pages/Categories';
 import BrandStore from './pages/BrandStore';
 import ProductPage from './pages/ProductPage';
 import Laptop from './pages/categories/Laptop';
-import Mobile from './pages/categories/mobile';
+import CMobile from './pages/categories/CMobile';
 
 
 
@@ -37,7 +37,7 @@ function App() {
             <Route path='/brandStore'element={<BrandStore></BrandStore>} ></Route>
             <Route path='/productPage'element={<ProductPage></ProductPage>} ></Route>
 
-            <Route path='/categories/mobile'element={<Mobile/>} ></Route>
+            <Route path='/categories/mobile'element={<CMobile/>} ></Route>
             <Route path='/categories/laptop'element={<Laptop/>} ></Route>
 
 
