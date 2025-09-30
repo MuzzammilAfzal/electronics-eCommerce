@@ -8,17 +8,18 @@ const Laptop = () => {
     const [isMd, setIsMd] = useState(window.innerWidth >= 768);    
         
              const bannerImagesDesktop=[
-              {image:"/images/banner/desktop/oppoK13x.avif"},
-              {image:"/images/banner/desktop/realmemobile.avif"},
-              {image:"/images/banner/desktop/google9a.avif"},
-              {image:"/images/banner/desktop/vivot4.avif"},
+              {image:"/images/banner/desktop/b1.avif"},
+              {image:"/images/banner/desktop/b2.jpg"},
+              {image:"/images/banner/desktop/b3.png"},
+              {image:"/images/banner/desktop/b4.avif"},
             ]   
         
               const bannerImagesMobile=[
-             {image:"/images/banner/mobile/oppok13x.avif"},
-              {image:"/images/banner/mobile/realmemobile.avif"},
-              {image:"/images/banner/mobile/google9a.avif"},
-              {image:"/images/banner/mobile/vivot4.avif"},
+             {image:"/images/banner/mobile/b1.avif"},
+             {image:"/images/banner/mobile/b2.jpg"},
+             {image:"/images/banner/mobile/b3.png"},
+             {image:"/images/banner/mobile/b4.jpg"},
+              
             ]  
         
             const companiesList=[

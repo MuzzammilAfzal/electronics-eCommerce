@@ -12,7 +12,7 @@ const Banner = ({data}) => {
     
     
   return (
-    <div className=''>
+    <div className='md:overflow-hidden md:h-[280px] flex justify-center '>
      <Swiper spaceBetween={20}  modules={[Autoplay,Navigation]} slidesPerView={1} loop autoplay={{ delay: 2000, disableOnInteraction: false}} navigation={isMd? true:false}>
       {
         images.data.map((e,index)=>{

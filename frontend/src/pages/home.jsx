@@ -88,6 +88,7 @@ function Home(){
 
     return <>
     <ScrollToTop/>
+     {window.scrollTo({ top: 0, behavior: "smooth" })}
     <Banner data={isMd? banner1ImagesDesktop:banner1ImagesMobile}/>
     <div className="p-2 bg-white">
            

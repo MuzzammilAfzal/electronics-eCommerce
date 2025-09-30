@@ -35,7 +35,7 @@ const CategoriesCards = ({title,link,logic,limit,skip}) => {
        <div className="w-full  bg-gray-200/80 rounded-lg my-4">
          <div className='w-full flex justify-between p-2'>
           <h2 className='text-lg font-bold pl-2 '>{title}</h2>
-          <h2 className='text-lg font-bold pl-2 block '><Link to={link}>View All🡲</Link></h2>
+          <h2 className='text-lg font-bold pl-2 block '><Link to={link}>View All️➡️</Link></h2>
         </div>
        <div className="flex gap-2 overflow-x-scroll">
         {product.map((e, index) => (
