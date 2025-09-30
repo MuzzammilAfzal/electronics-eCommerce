@@ -13,8 +13,8 @@ import NotFound from './pages/404NotFound';
 import Categories from './pages/Categories';
 import BrandStore from './pages/BrandStore';
 import ProductPage from './pages/ProductPage';
-import Mobile from './pages/categories/mobile';
 import Laptop from './pages/categories/Laptop';
+import Mobile from './pages/categories/mobile';
 
 
 
