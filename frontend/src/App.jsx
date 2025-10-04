@@ -15,6 +15,11 @@ import BrandStore from './pages/BrandStore';
 import ProductPage from './pages/ProductPage';
 import Laptop from './pages/categories/Laptop';
 import CMobile from './pages/categories/CMobile';
+import Tablet from './pages/categories/Tablet';
+import TV from './pages/categories/TV';
+import Wm from './pages/categories/Wm';
+import Ac from './pages/categories/Ac';
+import Ref from './pages/categories/Ref';
 
 
 
@@ -39,7 +44,11 @@ function App() {
 
             <Route path='/categories/mobile'element={<CMobile/>} ></Route>
             <Route path='/categories/laptop'element={<Laptop/>} ></Route>
-
+            <Route path='/categories/tablet'element={<Tablet/>} ></Route>
+            <Route path='/categories/tv'element={<TV/>} ></Route>
+            <Route path='/categories/wm'element={<Wm/>} ></Route>
+            <Route path='/categories/ac'element={<Ac/>} ></Route>
+            <Route path='/categories/ref'element={<Ref/>} ></Route>
 
             <Route path="/signup" element={<SignUp></SignUp>}></Route>
             <Route path="/login" element={<Login></Login>}></Route>

@@ -11,15 +11,15 @@ const CategoriesNavBar = () => {
              />Mobiles</Link>
              <Link to={"/categories/laptop"} className='md:flex items-center font-bold text-center'><img src="https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/misc/pictures/free-icon/resize-w:50/MO-msO1GU-menu_Laptop.png" alt=""
              />Laptops</Link>
-             <Link className='md:flex items-center font-bold text-center'><img src="https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/misc/pictures/free-icon/resize-w:50/WLtb0zEKO-menu_Tablets.png" alt=""
+             <Link to={"/categories/tablet"} className='md:flex items-center font-bold text-center'><img src="https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/misc/pictures/free-icon/resize-w:50/WLtb0zEKO-menu_Tablets.png" alt=""
              />Tablets</Link>
-             <Link className='md:flex items-center font-bold text-center'><img src="https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/misc/pictures/free-icon/resize-w:50/ro7KmfkN_-menu_Television.png" alt="" 
+             <Link to={"/categories/tv"} className='md:flex items-center font-bold text-center'><img src="https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/misc/pictures/free-icon/resize-w:50/ro7KmfkN_-menu_Television.png" alt="" 
              />Television</Link>
-             <Link className='md:flex items-center font-bold text-center'><img src="https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/misc/pictures/free-icon/resize-w:50/--pZ6pJ5n-menu_Washing-Machines.png" alt="" 
+             <Link to={"/categories/wm"} className='md:flex items-center font-bold text-center'><img src="https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/misc/pictures/free-icon/resize-w:50/--pZ6pJ5n-menu_Washing-Machines.png" alt="" 
              />Washing Machines</Link>
-             <Link className='md:flex items-center font-bold justify-center'><img src="https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/misc/pictures/free-icon/resize-w:50/6kAylQ0cV-menu_Accessories.png" alt=""
+             <Link to={"/categories/ac"} className='md:flex items-center font-bold justify-center'><img src="https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/misc/pictures/free-icon/resize-w:50/6kAylQ0cV-menu_Accessories.png" alt=""
              />Air Conditioner</Link>
-             <Link className='md:flex items-center font-bold text-center'><img src="https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/misc/pictures/free-icon/resize-w:50/mXaE3y_7l-menu_Kitchen-Appliances.png" alt=""
+             <Link to={"/categories/ref"} className='md:flex items-center font-bold text-center'><img src="https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/misc/pictures/free-icon/resize-w:50/mXaE3y_7l-menu_Kitchen-Appliances.png" alt=""
              />Refrigerators</Link>
          </li>
        </ul>

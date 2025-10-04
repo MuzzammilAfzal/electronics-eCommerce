@@ -20,7 +20,6 @@ const ProductPage = () => {
 
      const RenderDescription=()=>{
        if(product.descriptionImage){
-        console.log(product);
        return <div>
         <span className='font-bold text-lg block px-2'>Description</span>
         <img src={product.descriptionImage} alt="" className='rounded-2xl' />

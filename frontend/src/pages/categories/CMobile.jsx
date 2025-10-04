@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import Banner from '../../components/Banner';
 import { ShopByBrand } from '../../components/ShopByBrand';
 import CategoriesCards from '../../components/CategoriesCards';
+import ScrollToTop from '../../components/ScrollToTop';
 
 const CMobile = () => {
 
@@ -37,6 +38,7 @@ const CMobile = () => {
   return (
     <div className='p-2'>
          {window.scrollTo({ top: 0, behavior: "smooth" })}
+         <ScrollToTop/>
         <Banner data={isMd? bannerImagesDesktop:bannerImagesMobile}></Banner>
         <ShopByBrand companies={companiesList} />
 
