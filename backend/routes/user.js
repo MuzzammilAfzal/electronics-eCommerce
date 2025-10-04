@@ -12,10 +12,11 @@ router.get('/',(req,res)=>{
 
 router.post('/allProducts',async (req,res)=>{
 
+    
     const logic=req.body.logic 
     const limit=req.body.limit 
     const skip=req.body.skip
-    console.log(skip);
+
     
     const allProducts = await product.find(logic).skip(skip).limit(limit) 
     const filteredProduct=allProducts.filter(obj=>obj.productName!==undefined)

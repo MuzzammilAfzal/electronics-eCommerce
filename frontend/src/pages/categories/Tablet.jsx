@@ -23,10 +23,10 @@ const Tablet = () => {
         ]  
     
         const companiesList=[
-        {link:"/",image:"apple.avif"},
-        {link:"/",image:"samsung.png"},
-        {link:"/",image:"lenovo.avif"},
-        {link:"/",image:"oneplus.png"},
+        {link:"/brandStore?brand:apple&section:ipad",image:"apple.avif"},
+        {link:"/brandStore?brand:samsung&categories:tablet",image:"samsung.png"},
+        {link:"/brandStore?brand:lenovo&categories:tablet",image:"lenovo.avif"},
+        {link:"/brandStore?brand:oneplus&categories:tablet",image:"oneplus.png"},
         ]
 
   return (
@@ -38,22 +38,22 @@ const Tablet = () => {
 
          <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[#a28089] ">
             <span className="font-bold text-2xl ">Ipads</span>
-            <CategoriesCards title={""} link={"/"} logic={{categories:"tablet",brand:"apple"}} limit={0} skip={0} />
+            <CategoriesCards title={""} link={"/brandStore?brand:apple&section:ipad"} logic={{categories:"tablet",brand:"apple"}} limit={0} skip={0} />
          </div>
 
          <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[url(/images/wallpaper/wp8.jpeg)] bg-cover ">
             <span className="font-bold text-2xl ">Samsung</span>
-            <CategoriesCards title={""} link={"/"} logic={{categories:"tablet",brand:"samsung"}} limit={0} skip={0} />
+            <CategoriesCards title={""} link={"/brandStore?brand:samsung&categories:tablet"} logic={{categories:"tablet",brand:"samsung"}} limit={0} skip={0} />
          </div>
 
          <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[#4b3e42] ">
             <span className="font-bold text-2xl ">Oneplus</span>
-            <CategoriesCards title={""} link={"/"} logic={{categories:"tablet",brand:"oneplus"}} limit={0} skip={0} />
+            <CategoriesCards title={""} link={"/brandStore?brand:oneplus&categories:tablet"} logic={{categories:"tablet",brand:"oneplus"}} limit={0} skip={0} />
          </div>
 
          <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[#af5959] ">
             <span className="font-bold text-2xl ">Lenovo</span>
-            <CategoriesCards title={""} link={"/"} logic={{categories:"tablet",brand:"lenovo"}} limit={0} skip={0} />
+            <CategoriesCards title={""} link={"/brandStore?brand:lenovo&categories:tablet"} logic={{categories:"tablet",brand:"lenovo"}} limit={0} skip={0} />
          </div>
     </div>
   )

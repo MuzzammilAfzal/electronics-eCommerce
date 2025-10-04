@@ -21,10 +21,10 @@ const Ac = () => {
                   ]  
               
                   const companiesList=[
-                    {link:"/",image:"bluestar.jpg"},
-                  {link:"/",image:"daikin.jpg"},
-                  {link:"/",image:"voltas.jpg"},
-                   {link:"/",image:"lg.avif"},
+                    {link:"/brandStore?brand:bluestar&categories:ac",image:"bluestar.jpg"},
+                  {link:"/brandStore?brand:daikin&categories:ac",image:"daikin.jpg"},
+                  {link:"/brandStore?brand:voltas&categories:ac",image:"voltas.jpg"},
+                   {link:"/brandStore?brand:LG&categories:ac",image:"lg.avif"},
                   ]
 
   return (
@@ -38,26 +38,26 @@ const Ac = () => {
 
          <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[#a28089] ">
             <span className="font-bold text-2xl text-white ">Capacity: 2Ton and Above</span>
-            <CategoriesCards title={"LG"} link={"/"} logic={{categories:"ac",section:"2t and above",brand:"lg"}} limit={0} skip={0} />
-            <CategoriesCards title={"BlueStar"} link={"/"} logic={{categories:"ac",section:"2t and above",brand:"bluestar"}} limit={0} skip={0} />
-            <CategoriesCards title={"Daikin"} link={"/"} logic={{categories:"ac",section:"2t and above",brand:"daikin"}} limit={0} skip={0} />
-            <CategoriesCards title={"Voltas"} link={"/"} logic={{categories:"ac",section:"2t and above",brand:"voltas"}} limit={0} skip={0} />
+            <CategoriesCards title={"LG"} link={"/brandStore?brand:LG&categories:ac"} logic={{categories:"ac",section:"2t and above",brand:"LG"}} limit={0} skip={0} />
+            <CategoriesCards title={"BlueStar"} link={"/brandStore?brand:bluestar&categories:ac"} logic={{categories:"ac",section:"2t and above",brand:"bluestar"}} limit={0} skip={0} />
+            <CategoriesCards title={"Daikin"} link={"/brandStore?brand:daikin&categories:ac"} logic={{categories:"ac",section:"2t and above",brand:"daikin"}} limit={0} skip={0} />
+            <CategoriesCards title={"Voltas"} link={"/brandStore?brand:voltas&categories:ac"} logic={{categories:"ac",section:"2t and above",brand:"voltas"}} limit={0} skip={0} />
          </div>
 
          <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[#164264] ">
             <span className="font-bold text-2xl text-white ">Capacity: 1.1Ton - 1.5Ton</span>
-            <CategoriesCards title={"LG"} link={"/"} logic={{categories:"ac",section:"1.1-1.5t",brand:"lg"}} limit={0} skip={0} />
-            <CategoriesCards title={"BlueStar"} link={"/"} logic={{categories:"ac",section:"1.1-1.5t",brand:"bluestar"}} limit={0} skip={0} />
-            <CategoriesCards title={"Daikin"} link={"/"} logic={{categories:"ac",section:"1.1-1.5t",brand:"daikin"}} limit={0} skip={0} />
-            <CategoriesCards title={"Voltas"} link={"/"} logic={{categories:"ac",section:"1.1-1.5t",brand:"voltas"}} limit={0} skip={0} />
+            <CategoriesCards title={"LG"} link={"/brandStore?brand:LG&categories:ac"} logic={{categories:"ac",section:"1.1-1.5t",brand:"LG"}} limit={0} skip={0} />
+            <CategoriesCards title={"BlueStar"} link={"/brandStore?brand:bluestar&categories:ac"} logic={{categories:"ac",section:"1.1-1.5t",brand:"bluestar"}} limit={0} skip={0} />
+            <CategoriesCards title={"Daikin"} link={"/brandStore?brand:daikin&categories:ac"} logic={{categories:"ac",section:"1.1-1.5t",brand:"daikin"}} limit={0} skip={0} />
+            <CategoriesCards title={"Voltas"} link={"/brandStore?brand:voltas&categories:ac"} logic={{categories:"ac",section:"1.1-1.5t",brand:"voltas"}} limit={0} skip={0} />
          </div>
 
          <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[#5f6230] ">
             <span className="font-bold text-2xl text-white ">Capacity: 1Ton and Below</span>
-            <CategoriesCards title={"LG"} link={"/"} logic={{categories:"ac",section:"1t and below",brand:"lg"}} limit={0} skip={0} />
-            <CategoriesCards title={"BlueStar"} link={"/"} logic={{categories:"ac",section:"1t and below",brand:"bluestar"}} limit={0} skip={0} />
-            <CategoriesCards title={"Daikin"} link={"/"} logic={{categories:"ac",section:"1t and below",brand:"daikin"}} limit={0} skip={0} />
-            <CategoriesCards title={"Voltas"} link={"/"} logic={{categories:"ac",section:"1t and below",brand:"voltas"}} limit={0} skip={0} />
+            <CategoriesCards title={"LG"} link={"/brandStore?brand:LG&categories:ac"} logic={{categories:"ac",section:"1t and below",brand:"LG"}} limit={0} skip={0} />
+            <CategoriesCards title={"BlueStar"} link={"/brandStore?brand:bluestar&categories:ac"} logic={{categories:"ac",section:"1t and below",brand:"bluestar"}} limit={0} skip={0} />
+            <CategoriesCards title={"Daikin"} link={"/brandStore?brand:daikin&categories:ac"} logic={{categories:"ac",section:"1t and below",brand:"daikin"}} limit={0} skip={0} />
+            <CategoriesCards title={"Voltas"} link={"/brandStore?brand:voltas&categories:ac"} logic={{categories:"ac",section:"1t and below",brand:"voltas"}} limit={0} skip={0} />
          </div>
     </div>
   )

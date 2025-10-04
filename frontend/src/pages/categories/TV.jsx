@@ -25,10 +25,10 @@ const TV = () => {
           ]  
       
           const companiesList=[
-          {link:"/",image:"samsung.png"},
-          {link:"/",image:"lg.avif"},
-          {link:"/",image:"sony.avif"},
-          {link:"/",image:"sansui.jpg"},
+          {link:"/brandStore?brand:samsung&categories:TV",image:"samsung.png"},
+          {link:"/brandStore?brand:LG&categories:TV",image:"lg.avif"},
+          {link:"/brandStore?brand:sony&categories:TV",image:"sony.avif"},
+          {link:"/brandStore?brand:sansui&categories:TV",image:"sansui.jpg"},
           ]
 
 
@@ -43,42 +43,42 @@ const TV = () => {
 
           <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[url(/images/wallpaper/wp9.jpg)] bg-cover ">
             <span className="font-bold text-2xl text-white ">Size: 70inch and Above</span>
-            <CategoriesCards title={"LG"} link={"/"} logic={{categories:"TV",section:"70inch and above",brand:"LG"}} limit={0} skip={0} />
-            <CategoriesCards title={"Sansui"} link={"/"} logic={{categories:"TV",section:"70inch and above",brand:"sansui"}} limit={0} skip={0} />
-            <CategoriesCards title={"Samsung"} link={"/"} logic={{categories:"TV",section:"70inch and above",brand:"samsung"}} limit={0} skip={0} />
-            <CategoriesCards title={"Sony"} link={"/"} logic={{categories:"TV",section:"70inch and above",brand:"sony"}} limit={0} skip={0} />
+            <CategoriesCards title={"LG"} link={"/brandStore?brand:LG&categories:TV"} logic={{categories:"TV",section:"70inch and above",brand:"LG"}} limit={0} skip={0} />
+            <CategoriesCards title={"Sansui"} link={"/brandStore?brand:sansui&categories:TV"} logic={{categories:"TV",section:"70inch and above",brand:"sansui"}} limit={0} skip={0} />
+            <CategoriesCards title={"Samsung"} link={"/brandStore?brand:samsung&categories:TV"} logic={{categories:"TV",section:"70inch and above",brand:"samsung"}} limit={0} skip={0} />
+            <CategoriesCards title={"Sony"} link={"/brandStore?brand:sony&categories:TV"} logic={{categories:"TV",section:"70inch and above",brand:"sony"}} limit={0} skip={0} />
          </div>
 
          <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[#530101] bg-cover ">
             <span className="font-bold text-2xl text-white ">Size: 60inch-69inch</span>
-            <CategoriesCards title={"LG"} link={"/"} logic={{categories:"TV",section:"60-69inch",brand:"LG"}} limit={0} skip={0} />
-            <CategoriesCards title={"Sansui"} link={"/"} logic={{categories:"TV",section:"60-69inch",brand:"sansui"}} limit={0} skip={0} />
-            <CategoriesCards title={"Samsung"} link={"/"} logic={{categories:"TV",section:"60-69inch",brand:"samsung"}} limit={0} skip={0} />
-            <CategoriesCards title={"Sony"} link={"/"} logic={{categories:"TV",section:"60-69inch",brand:"sony"}} limit={0} skip={0} />
+            <CategoriesCards title={"LG"} link={"/brandStore?brand:LG&categories:TV"} logic={{categories:"TV",section:"60-69inch",brand:"LG"}} limit={0} skip={0} />
+            <CategoriesCards title={"Sansui"} link={"/brandStore?brand:sansui&categories:TV"} logic={{categories:"TV",section:"60-69inch",brand:"sansui"}} limit={0} skip={0} />
+            <CategoriesCards title={"Samsung"} link={"/brandStore?brand:samsung&categories:TV"} logic={{categories:"TV",section:"60-69inch",brand:"samsung"}} limit={0} skip={0} />
+            <CategoriesCards title={"Sony"} link={"/brandStore?brand:sony&categories:TV"} logic={{categories:"TV",section:"60-69inch",brand:"sony"}} limit={0} skip={0} />
          </div>
 
          <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[#015353] bg-cover ">
             <span className="font-bold text-2xl text-white ">Size: 50inch-59inch</span>
-            <CategoriesCards title={"LG"} link={"/"} logic={{categories:"TV",section:"50-59inch",brand:"LG"}} limit={0} skip={0} />
-            <CategoriesCards title={"Sansui"} link={"/"} logic={{categories:"TV",section:"50-59inch",brand:"sansui"}} limit={0} skip={0} />
-            <CategoriesCards title={"Samsung"} link={"/"} logic={{categories:"TV",section:"50-59inch",brand:"samsung"}} limit={0} skip={0} />
-            <CategoriesCards title={"Sony"} link={"/"} logic={{categories:"TV",section:"50-59inch",brand:"sony"}} limit={0} skip={0} />
+            <CategoriesCards title={"LG"} link={"/brandStore?brand:LG&categories:TV"} logic={{categories:"TV",section:"50-59inch",brand:"LG"}} limit={0} skip={0} />
+            <CategoriesCards title={"Sansui"} link={"/brandStore?brand:sansui&categories:TV"} logic={{categories:"TV",section:"50-59inch",brand:"sansui"}} limit={0} skip={0} />
+            <CategoriesCards title={"Samsung"} link={"/brandStore?brand:samsung&categories:TV"} logic={{categories:"TV",section:"50-59inch",brand:"samsung"}} limit={0} skip={0} />
+            <CategoriesCards title={"Sony"} link={"/brandStore?brand:sony&categories:TV"} logic={{categories:"TV",section:"50-59inch",brand:"sony"}} limit={0} skip={0} />
          </div>
 
          <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[#010c53] bg-cover ">
             <span className="font-bold text-2xl text-white ">Size: 40inch-49inch</span>
-            <CategoriesCards title={"LG"} link={"/"} logic={{categories:"TV",section:"40-49inch",brand:"LG"}} limit={0} skip={0} />
-            <CategoriesCards title={"Sansui"} link={"/"} logic={{categories:"TV",section:"40-49inch",brand:"sansui"}} limit={0} skip={0} />
-            <CategoriesCards title={"Samsung"} link={"/"} logic={{categories:"TV",section:"40-49inch",brand:"samsung"}} limit={0} skip={0} />
-            <CategoriesCards title={"Sony"} link={"/"} logic={{categories:"TV",section:"40-49inch",brand:"sony"}} limit={0} skip={0} />
+            <CategoriesCards title={"LG"} link={"/brandStore?brand:LG&categories:TV"} logic={{categories:"TV",section:"40-49inch",brand:"LG"}} limit={0} skip={0} />
+            <CategoriesCards title={"Sansui"} link={"/brandStore?brand:sansui&categories:TV"} logic={{categories:"TV",section:"40-49inch",brand:"sansui"}} limit={0} skip={0} />
+            <CategoriesCards title={"Samsung"} link={"/brandStore?brand:samsung&categories:TV"} logic={{categories:"TV",section:"40-49inch",brand:"samsung"}} limit={0} skip={0} />
+            <CategoriesCards title={"Sony"} link={"/brandStore?brand:sony&categories:TV"} logic={{categories:"TV",section:"40-49inch",brand:"sony"}} limit={0} skip={0} />
          </div>
 
         <div className="w-full h-fit  p-2 my-2 rounded-2xl bg-[#9185c9] ">
             <span className="font-bold text-2xl ">Size: 32inch-39inch</span>
-            <CategoriesCards title={"LG"} link={"/"} logic={{categories:"TV",section:"32-39inch",brand:"LG"}} limit={0} skip={0} />
-            <CategoriesCards title={"Sansui"} link={"/"} logic={{categories:"TV",section:"32-39inch",brand:"sansui"}} limit={0} skip={0} />
-            <CategoriesCards title={"Samsung"} link={"/"} logic={{categories:"TV",section:"32-39inch",brand:"samsung"}} limit={0} skip={0} />
-            <CategoriesCards title={"Sony"} link={"/"} logic={{categories:"TV",section:"32-39inch",brand:"sony"}} limit={0} skip={0} />
+            <CategoriesCards title={"LG"} link={"/brandStore?brand:LG&categories:TV"} logic={{categories:"TV",section:"32-39inch",brand:"LG"}} limit={0} skip={0} />
+            <CategoriesCards title={"Sansui"} link={"/brandStore?brand:sansui&categories:TV"} logic={{categories:"TV",section:"32-39inch",brand:"sansui"}} limit={0} skip={0} />
+            <CategoriesCards title={"Samsung"} link={"/brandStore?brand:samsung&categories:TV"} logic={{categories:"TV",section:"32-39inch",brand:"samsung"}} limit={0} skip={0} />
+            <CategoriesCards title={"Sony"} link={"/brandStore?brand:sony&categories:TV"} logic={{categories:"TV",section:"32-39inch",brand:"sony"}} limit={0} skip={0} />
          </div>
          
     </div>
