@@ -10,21 +10,12 @@ export default function SignUp(){
     const navigate=useNavigate()
     const [user, setUser] = useState({ fullName: "",email:"",phoneNo:"", password: "" ,deliveryAddress:"",myCart:[],myOrders:[]});
 
-  const handleFullNameChange = (e) => {
-  setUser({ ...user, fullName: e.target.value });
+  const handleChange = (e) => {
+  setUser({ ...user, [e.target.name]: e.target.value });
+  console.log(user);
+  
   };
-  const handlePhoneNoChange = (e) => {
-  setUser({ ...user, phoneNo: e.target.value });
-  };
-  const handleEmailChange = (e) => {
-  setUser({ ...user, email: e.target.value });
-  };
-  const handlePasswordChange = (e) => {
-  setUser({ ...user, password: e.target.value });
-   };
-   const handleDeliveryAddressChange = (e) => {
-  setUser({ ...user, deliveryAddress: e.target.value });
-   };
+
 
   const handleSubmit = async(e) => {
     e.preventDefault()
@@ -45,45 +36,94 @@ export default function SignUp(){
   };
 
      return (
-    <div className="flex flex-wrap gap-20 justify-center items-center h-1/2 bg-white">
-      <form method="POST"
-        onSubmit={handleSubmit} className="p-6 border-1 bg-white" >
-        <h2 className="text-center" >User SignUp</h2>
-        <div className="mb-2.5">
-          <label>Full Name</label><br />
-          <input type="text" name="username" onChange={handleFullNameChange} 
-           className="w-full p-2 mt-1 border-1" required />
-        </div>
-        <div className="mb-2.5">
-          <label>Phone Number (without +91)</label><br />
-          <input type="number" maxLength={10} name="phoneNO" onChange={handlePhoneNoChange} 
-           className="w-full p-2 mt-1" required />
-        </div>
-        <div className="mb-2.5" >
-          <label>Email</label><br />
-          <input type="email" name="email" onChange={handleEmailChange} 
-           className="w-full p-2 mt-1" required />
-        </div>
-        <div className="mb-2.5">
-          <label>Password</label><br />
-          <input type="password" name="password" onChange={handlePasswordChange} 
-           className="w-full p-2 mt-1" required />
-        </div>
-        <div className="mb-2.5">
-          <label>Delivery Address</label><br />
-          <input type="text" name="deliveryAddress" onChange={handleDeliveryAddressChange} 
-           className="w-full p-2 mt-1.5" required />
-        </div>
-        <button type="submit" className="w-full p-2.5 bg-blue-500 text-white" >
-          SignUp
-        </button>
-      </form>
-      <div>
-        <label>Already have account</label>
-        <button type="submit" className="w-full p-2.5 bg-blue-500 text-white" onClick={()=>{
-            navigate('/login',{replace:true})
-        }}>Login</button>
-      </div>
+    <div className="flex flex-wrap gap-12 justify-center items-center min-h-screen bg-gray-600">
+  <form
+    method="POST"
+    onSubmit={handleSubmit}
+    className="p-6 bg-white shadow-md rounded-lg w-96"
+  >
+    <h2 className="text-center text-xl font-semibold mb-4">User SignUp</h2>
+
+    <div className="mb-3">
+      <label className="block text-sm font-medium text-gray-700">Full Name</label>
+      <input
+        type="text"
+        name="fullName"
+        onChange={handleChange}
+        required
+        className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+      />
     </div>
+
+    <div className="mb-3">
+      <label className="block text-sm font-medium text-gray-700">
+        Phone Number (without +91)
+      </label>
+      <input
+        type="number"
+        name="phoneNO"
+        maxLength={10}
+        onChange={handleChange}
+        required
+        className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+      />
+    </div>
+
+    <div className="mb-3">
+      <label className="block text-sm font-medium text-gray-700">Email</label>
+      <input
+        type="email"
+        name="email"
+        onChange={handleChange}
+        required
+        className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+      />
+    </div>
+
+    <div className="mb-3">
+      <label className="block text-sm font-medium text-gray-700">Password</label>
+      <input
+        type="password"
+        name="password"
+        onChange={handleChange}
+        required
+        className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+      />
+    </div>
+
+    <div className="mb-4">
+      <label className="block text-sm font-medium text-gray-700">Delivery Address</label>
+      <input
+        type="text"
+        name="deliveryAddress"
+        onChange={handleChange}
+        required
+        className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+      />
+    </div>
+
+    <button
+      type="submit"
+      className="w-full py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition"
+    >
+      SignUp
+    </button>
+
+    <div className="flex flex-col items-center mt-10">
+    <label className="mb-2 text-gray-700">Already have an account?</label>
+    <button
+      type="button"
+      className="w-40 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition"
+      onClick={() => {
+        navigate("/login", { replace: true });
+      }}
+    >
+      Login
+    </button>
+  </div>
+  </form>
+
+  
+</div>
   )
 }

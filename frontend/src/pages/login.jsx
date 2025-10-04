@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import {  useNavigate } from "react-router-dom";
 const url=import.meta.env.VITE_URL
 
@@ -7,13 +7,11 @@ export default function Login(){
     const navigate=useNavigate()
     const [user, setUser] = useState({ email: "", password: "" });
 
-  const handleEmailChange = (e) => {
-  setUser({ ...user, email: e.target.value });
+  const handleChange = (e) => {
+  setUser({ ...user, [e.target.name]: e.target.value });
+ console.log(user)
   };
 
-  const handlePasswordChange = (e) => {
-  setUser({ ...user, password: e.target.value });
-   };
 
   const handleSubmit = async(e) => {
     e.preventDefault()
@@ -32,24 +30,44 @@ export default function Login(){
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", background: "white" }}>
-      <form method="POST"
-        onSubmit={handleSubmit} style={{ padding: "20px", background: "white", }}>
-        <h2 style={{ textAlign: "center" }}>User Login</h2>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Email</label><br />
-          <input type="text" name="username" onChange={handleEmailChange} 
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
-        </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Password</label><br />
-          <input type="password" name="password" onChange={handlePasswordChange} 
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}required />
-        </div>
-        <button type="submit" style={{ width: "100%", padding: "10px", background: "blue", color: "white" }}>
-          Login
-        </button>
-      </form>
+    <div className="flex justify-center   h-screen bg-gray-600">
+  <form
+    method="POST"
+    onSubmit={handleSubmit}
+    className="p-6 bg-white shadow-md rounded-lg w-80 h-fit mt-20"
+  >
+    <h2 className="text-center text-xl font-semibold mb-4">User Login</h2>
+
+    <div className="mb-4">
+      <label className="block text-sm font-medium text-gray-700">Email</label>
+      <input
+        type="text"
+        name="email"
+        onChange={handleChange}
+        required
+        className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      />
     </div>
+
+    <div className="mb-4">
+      <label className="block text-sm font-medium text-gray-700">Password</label>
+      <input
+        type="password"
+        name="password"
+        onChange={handleChange}
+        required
+        className="w-full p-2 mt-1 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      />
+    </div>
+
+    <button
+      type="submit"
+      className="w-full py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition"
+    >
+      Login
+    </button>
+  </form>
+</div>
+
   )
 }

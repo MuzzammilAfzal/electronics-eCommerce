@@ -3,7 +3,7 @@ const mongoose=require("mongoose")
 
 
 const userSchema= new mongoose.Schema({
-    phoneNo : {type:String ,required:true,min:10,max:10},
+    phoneNo : {type:Number ,required:true,min:10,max:10},
     fullName:{type:String,required:true},
     email:String,
     password:{type:String,required:true},
