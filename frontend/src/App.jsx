@@ -20,6 +20,7 @@ import TV from './pages/categories/TV';
 import Wm from './pages/categories/Wm';
 import Ac from './pages/categories/Ac';
 import Ref from './pages/categories/Ref';
+import ConfirmedOrder from './pages/ConfirmedOrder';
 
 
 
@@ -41,6 +42,7 @@ function App() {
             <Route path='/categories'element={<Categories></Categories>} ></Route>
             <Route path='/brandStore'element={<BrandStore></BrandStore>} ></Route>
             <Route path='/productPage'element={<ProductPage></ProductPage>} ></Route>
+            <Route path='/ConfirmedOrder' element={<ConfirmedOrder/>} ></Route>
 
             <Route path='/categories/mobile'element={<CMobile/>} ></Route>
             <Route path='/categories/laptop'element={<Laptop/>} ></Route>

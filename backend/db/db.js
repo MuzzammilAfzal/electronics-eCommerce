@@ -3,9 +3,9 @@ const mongoose=require("mongoose")
 
 
 const userSchema= new mongoose.Schema({
-    phoneNo : {type:Number ,required:true,min:10,max:10},
+    phoneNo : {type:Number ,required:true},
     fullName:{type:String,required:true},
-    email:String,
+    email:{type:String,required:true},
     password:{type:String,required:true},
     deliveryAddress:{type:String,required:true},
     myCart:[{type:mongoose.Schema.Types.ObjectId, ref:"product"}],
@@ -29,12 +29,20 @@ const adminSchema = new mongoose.Schema({
   password:String
 })
 
+const orderSchema = new mongoose.Schema({
+  productId:String,
+  payment:String,
+  userId:String
+})
+
 const user = mongoose.model("user",userSchema)
 const product =mongoose.model("product",productSchema)
 const admin= mongoose.model("admin",adminSchema,"admin")
+const order= mongoose.model("order",orderSchema,"order")
 
 module.exports={
   user,
   product,
-  admin
+  admin,
+  order
 }

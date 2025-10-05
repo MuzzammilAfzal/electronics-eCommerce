@@ -1,5 +1,7 @@
 import { use, useState } from "react";
 import {  useNavigate } from "react-router-dom";
+import {toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const url=import.meta.env.VITE_URL
 
 export default function Login(){
@@ -23,14 +25,21 @@ export default function Login(){
     const data = await response.json();
     if(data.token){
         localStorage.setItem("token",data.token)
+        if(localStorage.getItem("product")){
+           navigate(`/productPage?${localStorage.getItem("product")}`,{replace:true})
+           location.reload()
+        }else{
         navigate('/',{replace:true})
+        location.reload()
+        }
     }else{
-        alert("error logging user")
+        toast.error("error logging user")
     }
   };
 
   return (
     <div className="flex justify-center   h-screen bg-gray-600">
+      {window.scrollTo({ top: 0, behavior: "smooth" })}
   <form
     method="POST"
     onSubmit={handleSubmit}
@@ -66,6 +75,19 @@ export default function Login(){
     >
       Login
     </button>
+    <div className="flex flex-col items-center mt-6">
+      <label className="mb-2 text-gray-700 font-semibold">or</label>
+    <label className="mb-2 text-gray-700">Don’t have an account?</label>
+    <button
+      type="button"
+      className="w-40 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition"
+      onClick={() => {
+        navigate("/signup", { replace: true });
+      }}
+    >
+      SignUp
+    </button>
+  </div>
   </form>
 </div>
 

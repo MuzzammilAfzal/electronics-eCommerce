@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import {  useNavigate } from "react-router-dom";
+import {toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const url=import.meta.env.VITE_URL
 
 
@@ -27,16 +29,26 @@ export default function SignUp(){
     const data = await response.json();
     if(data.token){
         localStorage.setItem("token",data.token)
+        if(localStorage.getItem("product")){
+           navigate(`/productPage?${localStorage.getItem("product")}`,{replace:true})
+           location.reload()
+        }else{
         navigate('/',{replace:true})
+        location.reload()
+        }
     }else{
         if(!response.ok){
-            alert("user already exists")
+            toast.error("user already exists")
+        }else{
+           toast.error("error")
         }
+
     }
   };
 
      return (
     <div className="flex flex-wrap gap-12 justify-center items-center min-h-screen bg-gray-600">
+      {window.scrollTo({ top: 0, behavior: "smooth" })}
   <form
     method="POST"
     onSubmit={handleSubmit}
@@ -61,7 +73,7 @@ export default function SignUp(){
       </label>
       <input
         type="number"
-        name="phoneNO"
+        name="phoneNo"
         maxLength={10}
         onChange={handleChange}
         required

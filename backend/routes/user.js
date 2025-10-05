@@ -1,6 +1,6 @@
 const express =require("express")
 const { authJwt } = require("../auth/auth")
-const { product, user } = require("../db/db")
+const { product, user, order } = require("../db/db")
 const jwt =require("jsonwebtoken")
 const router=express.Router()
 
@@ -29,7 +29,7 @@ router.post('/allProducts',async (req,res)=>{
 router.post('/specificProducts',async (req,res)=>{
 
     const _id=req.body._id
-    console.log({_id});
+  
     
     const specificProduct = await product.find({_id})
 
@@ -71,14 +71,35 @@ router.post('/addToCart',authJwt, async(req,res)=>{
     const id=  req.headers.product
     const {email}=req.user
     const User= await user.findOne({email})
-    if(User){
+   const found =User?.myCart.includes(id)
+   if(found){
+    res.status(404).json({message:"Item already present in the Cart"}) 
+   }
+    if(!found){
         await user.updateOne({_id:User._id}, { $addToSet: { myCart: id } })
-        res.status(400).json({message:"successful adding to cart"})
+        res.status(200).json({message:"successful adding to cart"})
     }else{
-       res.status(400).json({message:"unsuccessful adding to cart"}) 
+        if(!User && !found){
+       res.status(500).json({message:"unsuccessful adding to cart"}) 
+        }
     }
+
     
 })
+
+router.post('/removeFromCart',authJwt, async(req,res)=>{
+    const id=  req.headers.product
+    const {email}=req.user
+    const User= await user.findOne({email})
+   const found =User?.myCart.includes(id)
+   if(found){
+    await user.updateOne({ _id: User._id }, { $pull: { myCart: id } });
+    res.status(200).json({message:"removed from cart"})
+   }else{
+        if(!User && !found){
+       res.status(500).json({message:"unsuccessful removing from cart"}) 
+        }    
+}})
 
 
 router.get('/myCart',authJwt,async (req,res)=>{
@@ -105,6 +126,7 @@ router.get('/buyPageProduct',authJwt,async (req,res)=>{
 router.post('/confirmOrder',authJwt, async(req,res)=>{
     const id=  req.headers.id    
     const {email}=req.user
+    const payment=req.headers.payment
     const User= await user.findOne({email})
     if(User){
         User.myOrders.push(id)
@@ -112,6 +134,14 @@ router.post('/confirmOrder',authJwt, async(req,res)=>{
         res.status(200).json({message:"successful "})
     }else{
        res.status(400).json({message:"unsuccessful Order"}) 
+    }
+    if(User){
+        const userId=User._id
+        const productId=id
+        const newOrder=await order.create({productId,payment,userId})
+        if(newOrder){
+            console.log(newOrder)
+        }
     }
     
 })

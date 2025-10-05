@@ -1,8 +1,10 @@
 import React,{useState,useEffect} from 'react'
-import { useLocation,Link } from 'react-router-dom';
+import { useLocation,Link,useNavigate } from 'react-router-dom';
 import RenderLoading from '../components/renderLoading';
 import ScrollToTop from '../components/ScrollToTop';
 const url=import.meta.env.VITE_URL
+import {toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 
@@ -16,6 +18,7 @@ const ProductPage = () => {
     const location=useLocation()
     const query=location.search
      const id=query.replace("?","")
+     const navigate=useNavigate()
 
 
      const RenderDescription=()=>{
@@ -59,9 +62,11 @@ const ProductPage = () => {
                         }})
                     const data=await response.json()
                     if(response.ok){
-                        alert("successfully added to cart")
+                        toast.success("successfully added to cart")
                     }else{
-                        alert(data.message)
+                      console.log(data.message);
+                      
+                        toast.error(data.message)
                     }
                 }else{
                     navigate('/myCart')
@@ -73,7 +78,6 @@ const ProductPage = () => {
   return (
     <>
     {window.scrollTo({top:0})}
-   
     <RenderLoading loading={loading}/>
     <div  className='md:flex bg-gray-200 p-5 '>
         <div className='w-full md:w-fit mb-2 shrink-0  '>

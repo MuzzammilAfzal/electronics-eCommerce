@@ -28,7 +28,7 @@ export default function AdminLogin(){
         sessionStorage.setItem("token",data.token)
         navigate('/adminDashboard',{replace:true})
     }else{
-        alert("error logging admin")
+        toast.error("error logging admin")
     }
   };
 
