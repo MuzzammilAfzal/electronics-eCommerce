@@ -32,7 +32,8 @@ const adminSchema = new mongoose.Schema({
 const orderSchema = new mongoose.Schema({
   productId:String,
   payment:String,
-  userId:String
+  userId:String,
+  time:String
 })
 
 const user = mongoose.model("user",userSchema)

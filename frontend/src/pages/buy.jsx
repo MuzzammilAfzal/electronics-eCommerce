@@ -68,7 +68,7 @@ export default function Buy(){
                                   }})
                               const data=await response.json()
                               if(response.ok){
-                                  toast.success("Order Placed")
+                                  toast.success(data.message)
                                   navigate("/ConfirmedOrder",{replace:true})
                               }else{
                                 console.log(data.message);

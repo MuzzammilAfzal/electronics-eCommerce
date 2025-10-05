@@ -124,25 +124,22 @@ router.get('/buyPageProduct',authJwt,async (req,res)=>{
 
 
 router.post('/confirmOrder',authJwt, async(req,res)=>{
-    const id=  req.headers.id    
-    const {email}=req.user
+    const id=  req.headers.product
     const payment=req.headers.payment
+    const now = new Date();
+    const time = now.toLocaleTimeString();
+    const {email}=req.user
     const User= await user.findOne({email})
     if(User){
-        User.myOrders.push(id)
-        User.save()
-        res.status(200).json({message:"successful "})
+        await user.updateOne({_id:User._id}, { $addToSet: { myOrders: id } })
+        await order.create({userId:User._id,payment,productId:id,time:time})
+        res.status(200).json({message:"Order Placed"})
     }else{
-       res.status(400).json({message:"unsuccessful Order"}) 
-    }
-    if(User){
-        const userId=User._id
-        const productId=id
-        const newOrder=await order.create({productId,payment,userId})
-        if(newOrder){
-            console.log(newOrder)
+        if(!User ){
+       res.status(500).json({message:"unsuccessful adding to cart"}) 
         }
     }
+
     
 })
 
