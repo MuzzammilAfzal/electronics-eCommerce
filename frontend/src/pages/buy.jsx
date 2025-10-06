@@ -33,7 +33,7 @@ export default function Buy(){
 
     function Product({_id,productName,price,image}){
                 return <>
-                 <div className="w-full  flex md:block p-2 m-1 border border-white rounded-lg hover:shadow-black hover:shadow-2xl">
+                 <div className="md:w-[50vw] w-100%  flex  p-2 m-1 border border-white rounded-lg hover:shadow-black hover:shadow-2xl">
               <Link to={`/productPage?${_id}`}>
                <div>
                 <img
@@ -84,14 +84,16 @@ export default function Buy(){
     return<>
     {window.scrollTo({ top: 0, behavior: "smooth" })}
      <RenderLoading loading={loading}/>
-               <div className="w-full  bg-gray-200 rounded-lg my-4">
-               <div className='w-full flex justify-center bg-blue-950 p-2 rounded-xl'>
+      <div className="">
+        <div className='w-full flex justify-center bg-blue-950 p-2 rounded-xl'>
               <h2 className='text-2xl text-white  font-medium pl-2 '>
                Order Details</h2>
               </div>
+               <div className="w-full md:flex  bg-gray-200 rounded-lg my-4">
+               
                <div className="flex gap-2 flex-wrap">
                 <div
-                className="md:shrink-0  md:w-[16%]" 
+                className="md:shrink-0  md:w-[30%]" 
                  >
                 <Product
                   _id={product._id}
@@ -101,9 +103,8 @@ export default function Buy(){
                 />
               </div>
             </div>
-            </div>
-            <div className="w-full h-screen  bg-gray-300 p-2 ">
-              <span className="px-20 text-2xl bg-blue-800 rounded-2xl text-white ">Payment Method</span>
+            <div className="w-full h-fit  bg-gray-300 p-4 hover:shadow-black hover:shadow-2xl rounded-4xl ">
+              <span className="px-10 text-2xl bg-blue-800 rounded-2xl text-white ">Payment Method</span>
               <form  >
                 <div className="w-full p-3 mx-0.5 my-2 border rounded-2xl">
                     <input type="radio" name="payment" value="cod" required
@@ -122,10 +123,13 @@ export default function Buy(){
                 </div>
              </form>
              <button
-              className="mx-22" onClick={handleOrder}> 
-              <span className="px-5 text-2xl bg-green-900 rounded-2xl text-white ">Place Order</span>
+              className="flex justify-center" onClick={handleOrder}> 
+              <span className="p-2 text-2xl bg-green-900 rounded-2xl text-white ">Place Order</span>
               </button>
             </div>
+            </div>
+            
+      </div>      
 </>
 
     }else{

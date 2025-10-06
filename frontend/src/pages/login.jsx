@@ -39,7 +39,6 @@ export default function Login(){
 
   return (
     <div className="flex justify-center   h-screen bg-gray-600">
-      {window.scrollTo({ top: 0, behavior: "smooth" })}
   <form
     method="POST"
     onSubmit={handleSubmit}

@@ -94,26 +94,27 @@ function Home(){
            
            <div className="w-full h-fit p-4 my-2 rounded-2xl bg-cyan-700">
             <span className="font-extrabold text-2xl">Popular Premium Mobile Brands</span>
-            <CategoriesCards title={"Iphones"} link={"/"} logic={{brand:"apple",categories:"mobile"}} limit={20} skip={3} />
+            <CategoriesCards title={"Iphones"} link={"/brandStore?brand:apple&categories:mobile"} logic={{brand:"apple",categories:"mobile"}} limit={20} skip={3} />
             <span className="font-extrabold text-2xl" >Other Premium Brands</span>
-            <CategoriesCards title={"Premium"} link={"/"} logic={{ $nor: [ { brand: "apple" }, { brand: "samsung" } ],cleanedPrice:{$gt:50000},categories:"mobile" } } limit={20} />
+            <CategoriesCards title={"Premium"} link={"/brandStore?categories:mobile"} 
+            logic={{ $nor: [ { brand: "apple" }, { brand: "samsung" } ],cleanedPrice:{$gt:50000},categories:"mobile" } } limit={20} />
            </div>
            <Banner data={isMd? banner2ImagesDesktop:banner2ImagesMobile} />
 
 
            <div className="w-full h-fit md:p-10 p-4 my-2 rounded-2xl bg-[url('/images/wallpaper/gaming.jpg')] bg-cover">
             <span className="font-extrabold text-2xl text-white">Gaming Zone</span>
-            <CategoriesCards title={"Gaming Laptops"} link={"/"} logic={{categories:"laptop",section:"gaming"}} limit={20} skip={0} />
+            <CategoriesCards title={"Gaming Laptops"} link={"/brandStore?categories:laptop&section:gaming"} logic={{categories:"laptop",section:"gaming"}} limit={20} skip={0} />
            </div>
            <div className="w-full h-fit p-4  rounded-2xl bg-[#475450] ">
-            <CategoriesCards title={"Students and Business Laptops"} link={"/"} logic={{categories:"laptop",section2:"students",section3:"business"}} limit={20} skip={0} />
+            <CategoriesCards title={"Students and Business Laptops"} link={"/brandStore?categories:laptop&section2:students&section3:business"} logic={{categories:"laptop",section2:"students",section3:"business"}} limit={20} skip={0} />
            </div>
 
 
           <div className="w-full h-fit p-4 my-2 rounded-2xl bg-[#b5954a]">
             <span className="font-extrabold text-2xl">Tablets</span>
-            <CategoriesCards title={"Ipads"} link={"/"} logic={{brand:"apple",section:"ipad"}} limit={20} skip={0} />
-            <CategoriesCards title={"Samsung,Lenovo,Oneplus"} link={"/"} logic={{ $nor: [ { brand: "apple" }],categories:"tablet" } } limit={20} />
+            <CategoriesCards title={"Ipads"} link={"/brandStore?brand:apple&section:ipad"} logic={{brand:"apple",section:"ipad"}} limit={20} skip={0} />
+            <CategoriesCards title={"Samsung,Lenovo,Oneplus"} link={"/brandStore?categories:tablet"} logic={{ $nor: [ { brand: "apple" }],categories:"tablet" } } limit={20} />
            </div>
 
            <Banner  data={isMd? banner3ImagesDesktop:banner3ImagesMobile} />
@@ -121,8 +122,8 @@ function Home(){
 
            <div className="w-full h-fit p-4 my-2 rounded-2xl bg-[#67b54a]">
             <span className="font-extrabold text-2xl">Television</span>
-            <CategoriesCards title={"Size:(32inch to 49inch)"} link={"/"} logic={{categories:"TV",$or:[{section:"32-39inch"},{section:"40-49inch"}]}} limit={20} skip={0} />
-            <CategoriesCards title={"Size:(50inch and above)"} link={"/"} logic={{categories:"TV",$or:[{section:"50-59inch"},{section:"60-69inch"},{section:"70inch and above"}] } } limit={20} />
+            <CategoriesCards title={"Size:(32inch to 49inch)"} link={"/brandStore?categories:TV"} logic={{categories:"TV",$or:[{section:"32-39inch"},{section:"40-49inch"}]}} limit={20} skip={0} />
+            <CategoriesCards title={"Size:(50inch and above)"} link={"/brandStore?categories:TV"} logic={{categories:"TV",$or:[{section:"50-59inch"},{section:"60-69inch"},{section:"70inch and above"}] } } limit={20} />
            </div>
 
            
@@ -131,17 +132,17 @@ function Home(){
 
            <div className="w-full h-fit p-4 my-2 rounded-2xl bg-[#b6385a]">
             <span className="font-extrabold text-2xl">Air Conditioner</span>
-            <CategoriesCards title={"Capacity: 1Ton - 2Ton and above"} link={"/"} logic={{categories:"ac"}} limit={20} skip={0} />
+            <CategoriesCards title={"Capacity: 1Ton - 2Ton and above"} link={"/brandStore?categories:ac"} logic={{categories:"ac"}} limit={20} skip={0} />
            </div>
 
            <div className="w-full h-fit p-4 my-2 rounded-2xl bg-[#b638a9]">
             <span className="font-extrabold text-2xl">Refrigerators</span>
-            <CategoriesCards title={"Upto 600 Liters"} link={"/"} logic={{categories:"ref"}} limit={20} skip={0} />
+            <CategoriesCards title={"Upto 600 Liters"} link={"/brandStore?categories:ref"} logic={{categories:"ref"}} limit={20} skip={0} />
            </div>
 
            <div className="w-full h-fit p-4 my-2 rounded-2xl bg-[#7f38b6]">
             <span className="font-extrabold text-2xl">Washing Machines</span>
-            <CategoriesCards title={"Capacity: 7 to 10 KG"} link={"/"} logic={{categories:"wm"}} limit={20} skip={0} />
+            <CategoriesCards title={"Capacity: 7 to 10 KG"} link={"/brandStore?categories:wm"} logic={{categories:"wm"}} limit={20} skip={0} />
            </div>
 
 

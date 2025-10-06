@@ -48,7 +48,6 @@ export default function SignUp(){
 
      return (
     <div className="flex flex-wrap gap-12 justify-center items-center min-h-screen bg-gray-600">
-      {window.scrollTo({ top: 0, behavior: "smooth" })}
   <form
     method="POST"
     onSubmit={handleSubmit}

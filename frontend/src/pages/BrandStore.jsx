@@ -75,7 +75,7 @@ const BrandStore = () => {
        <div className="w-full  bg-gray-200/80 rounded-lg my-4">
          <div className='w-full flex justify-center bg-blue-950 p-2 rounded-xl'>
           <h2 className='text-4xl text-white  font-bold pl-2 '>
-            {`${logic.brand} `}
+            {logic.brand && `${logic.brand} `}
             {!logic.categories && !logic.section && `Store`}
             {logic.categories && ` ${logic.categories}`}
             {logic.categories==="ref" && `rigerators`}
