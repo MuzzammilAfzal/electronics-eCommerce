@@ -143,4 +143,16 @@ router.post('/confirmOrder',authJwt, async(req,res)=>{
     
 })
 
+router.get("/search", async (req, res) => {
+  try {
+    const query = req.query.q || "";
+    const results = await product.find({
+        productName: { $regex: query, $options: "i" } 
+    }).limit(10); 
+    res.json(results);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports=router
