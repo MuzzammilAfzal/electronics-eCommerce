@@ -21,7 +21,7 @@ function NavBar(){
     }
 
     return <div className="sticky top-0 z-50  ">
-     <nav className="flex justify-evenly items-center flex-wrap bg-gray-800 md:py-6 text-white w-full h-24  ">
+     <nav className="flex justify-evenly items-center flex-wrap bg-gray-800 md:py-0 text-white w-full h-24  ">
            <h1 className="text-xl font-bold">Electronics Store</h1>
            {isMd && <Search/>}
      <div className=" flex  gap-10 justify-center items-center">
